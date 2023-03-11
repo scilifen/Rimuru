@@ -1,0 +1,134 @@
+{
+  "name": "Rimuru-fw",
+  "type": "ARM",
+  "dependenceList": [],
+  "srcDirs": [
+    ".eide/deps",
+    "../Libraries/rttherad_libraries",
+    "../Libraries/seekfree_libraries"
+  ],
+  "virtualFolder": {
+    "name": "<virtual_root>",
+    "files": [],
+    "folders": [
+      {
+        "name": "User",
+        "files": [
+          {
+            "path": "../Rimuru-fw/main.c"
+          }
+        ],
+        "folders": [
+          {
+            "name": "isr",
+            "files": [
+              {
+                "path": "../Rimuru-fw/ISR/Src/isr.c"
+              }
+            ],
+            "folders": []
+          },
+          {
+            "name": "tasks",
+            "files": [],
+            "folders": []
+          }
+        ]
+      }
+    ]
+  },
+  "outDir": "build",
+  "deviceName": null,
+  "packDir": null,
+  "miscInfo": {
+    "uid": "28cbd9f8515680fb8e9e22dbb838ef14"
+  },
+  "targets": {
+    "Debug": {
+      "excludeList": [],
+      "toolchain": "AC5",
+      "compileConfig": {
+        "cpuType": "Cortex-M3",
+        "floatingPointHardware": "none",
+        "useCustomScatterFile": false,
+        "scatterFilePath": "<YOUR_SCATTER_FILE>.sct",
+        "storageLayout": {
+          "RAM": [
+            {
+              "tag": "IRAM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x20000000",
+                "size": "0x20000"
+              },
+              "isChecked": true,
+              "noInit": false
+            }
+          ],
+          "ROM": [
+            {
+              "tag": "IROM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x08000000",
+                "size": "0x80000"
+              },
+              "isChecked": true,
+              "isStartup": true
+            }
+          ]
+        },
+        "options": "null"
+      },
+      "uploader": "pyOCD",
+      "uploadConfig": {
+        "bin": "",
+        "targetName": "mm32f3277g9p",
+        "baseAddr": "0x08000000",
+        "speed": "4M",
+        "config": ".eide/debug.pyocd.yaml"
+      },
+      "uploadConfigMap": {
+        "JLink": {
+          "bin": "",
+          "baseAddr": "",
+          "cpuInfo": {
+            "vendor": "null",
+            "cpuName": "null"
+          },
+          "proType": 1,
+          "speed": 8000,
+          "otherCmds": ""
+        },
+        "OpenOCD": {
+          "bin": "",
+          "target": "stm32f1x",
+          "interface": "stlink",
+          "baseAddr": "0x08000000"
+        }
+      },
+      "custom_dep": {
+        "name": "default",
+        "incList": [
+          ".eide/deps",
+          "../Libraries/rttherad_libraries/include",
+          "../Libraries/rttherad_libraries/include/libc",
+          "../Rimuru-fw/ISR/Inc",
+          "../Rimuru-fw/Tasks/Inc",
+          "../Libraries/seekfree_libraries",
+          "../Libraries/seekfree_libraries/common",
+          "../Libraries/rttherad_libraries/components/finsh",
+          "../Libraries/rttherad_libraries/bsp/Libraries/MM32F327x/HAL_Lib/Inc",
+          "../Libraries/rttherad_libraries/bsp/Libraries/CMSIS/KEIL_Core",
+          "../Libraries/rttherad_libraries/bsp/Libraries/MM32F327x/Include",
+          "../Libraries/rttherad_libraries/bsp/drivers",
+          "../Libraries/rttherad_libraries/bsp"
+        ],
+        "libList": [],
+        "sourceDirList": [],
+        "defineList": []
+      }
+    }
+  },
+  "version": "3.3"
+}
