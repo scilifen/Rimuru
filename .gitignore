@@ -1,2 +1,4 @@
 # References form other projects
 refs/*
+# Temp
+**/tmp/*
